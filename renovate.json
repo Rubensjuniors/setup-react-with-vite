@@ -1,0 +1,23 @@
+{
+  "extends": ["config:base"],
+  "automerge": false,
+  "automergeType": "pr",
+  "automergeStrategy": "squash",
+  "schedule": ["before 5am on Monday"],
+  "semanticCommits": "enabled",
+  "versioning": "auto",
+  "rangeStrategy": "increase",
+  "dependencyDashboard": true,
+  "packageRules": [
+    {
+      "packageNames": ["eslint", "prettier"],
+      "automerge": false,
+      "schedule": ["before 5am on Sunday"]
+    },
+    {
+      "packageNames": ["react", "react-dom"],
+      "enabled": true,
+      "rangeStrategy": "lockfile-only" 
+    }
+  ]
+}
